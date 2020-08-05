@@ -26,6 +26,8 @@ public class CommandRunner {
         int exitCode = process.waitFor();
         assert exitCode == 0;
 
+        System.out.println("End of shell cmd");
+
     }
 
 }
