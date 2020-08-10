@@ -28,6 +28,12 @@
       <version>0.150</version>
     </dependency>
 
+    <dependency>
+      <groupId>org.bitbucket.mstrobel</groupId>
+      <artifactId>procyon-compilertools</artifactId>
+      <version>0.5.36</version>
+    </dependency>
+
   </dependencies>
 
   <build>
