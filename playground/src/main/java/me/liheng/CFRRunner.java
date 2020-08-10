@@ -32,16 +32,34 @@ public class CFRRunner {
 
         CfrDriver driver = new CfrDriver.Builder().withOutputSink(mySink).build();
 
-        driver.analyse(Collections.singletonList(JUNIT_PATH));
+        driver.analyse(Collections.singletonList(JASPER_PATH));
 
         ps.flush();
         // Show what happened
-        String [] lines =  baos.toString().split("\\r?\\n");
-        System.out.println("Here: " + lines.length);
-        for (int i = 0; i <11; i++) {
-            System.out.println(lines[i]);
-        }
+        int classCount = 0;
+        String [] lines =  baos.toString().split(System.lineSeparator());
+//        for (String line : lines) {
+//            if (line.contains("Analysing type ")) classCount++;
+//        }
+//        System.out.println("class count: " + classCount); //2811
 
+
+
+
+        boolean afterPackage = false;
+        for (String line : lines) {
+            if (line.startsWith("package ") && line.endsWith(";")) {
+                afterPackage = true;
+                continue;
+            }
+            if (afterPackage
+                    && (line.contains("class ") || line.contains("interface ") || line.contains("enum "))
+                    && !line.startsWith("//") && !line.startsWith("/*") && !line.startsWith(" *")) {
+                classCount ++;
+                afterPackage = false;
+            }
+        }
+        System.out.println("class count: " + classCount);
     }
 
 }
