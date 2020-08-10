@@ -16,11 +16,6 @@ public class CFRRunner {
         // Create a stream to hold the output
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         PrintStream ps = new PrintStream(baos);
-        // IMPORTANT: Save the old System.out!
-        PrintStream old = System.out;
-        // Tell Java to use your special stream
-        System.setOut(ps);
-
 
         OutputSinkFactory mySink = new OutputSinkFactory() {
             @Override
@@ -31,7 +26,7 @@ public class CFRRunner {
 
             @Override
             public <T> Sink<T> getSink(SinkType sinkType, SinkClass sinkClass) {
-                return sinkType == SinkType.JAVA ? System.out::println : ignore -> {};
+                return sinkType == SinkType.JAVA ? ps::println : ignore -> {};
             }
         };
 
@@ -39,11 +34,13 @@ public class CFRRunner {
 
         driver.analyse(Collections.singletonList(JUNIT_PATH));
 
-        // Put things back
-        System.out.flush();
-        System.setOut(old);
+        ps.flush();
         // Show what happened
-        System.out.println("Here: " + baos.toString());
+        String [] lines =  baos.toString().split("\\r?\\n");
+        System.out.println("Here: " + lines.length);
+        for (int i = 0; i <11; i++) {
+            System.out.println(lines[i]);
+        }
 
     }
 
