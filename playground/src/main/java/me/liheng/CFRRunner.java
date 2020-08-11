@@ -35,8 +35,11 @@ public class CFRRunner {
         driver.analyse(Collections.singletonList(JASPER_PATH));
 
         ps.flush();
+
+
         // Show what happened
-        int classCount = 0;
+
+//        int classCount = 0;
         String [] lines =  baos.toString().split(System.lineSeparator());
 //        for (String line : lines) {
 //            if (line.contains("Analysing type ")) classCount++;
@@ -44,22 +47,42 @@ public class CFRRunner {
 //        System.out.println("class count: " + classCount); //2811
 
 
-
+        StringBuilder sb = new StringBuilder();
+        int classCount = 0;
 
         boolean afterPackage = false;
         for (String line : lines) {
+            line = line.trim().replaceAll(" +", " ");
+
             if (line.startsWith("package ") && line.endsWith(";")) {
+                String packageNameWithSemicolon = line.split(" ")[1];
+                packageNameWithSemicolon = packageNameWithSemicolon.replaceAll(" +", "");
+                String packageName = packageNameWithSemicolon.substring(0, packageNameWithSemicolon.length() - 1);
+                sb.append(packageName);
                 afterPackage = true;
-                continue;
-            }
-            if (afterPackage
+            } else if (afterPackage && line.startsWith("import ") && line.endsWith(";")) {
+
+            } else if (afterPackage
                     && (line.contains("class ") || line.contains("interface ") || line.contains("enum "))
-                    && !line.startsWith("//") && !line.startsWith("/*") && !line.startsWith(" *")) {
-                classCount ++;
+                    && !line.startsWith("//") && !line.startsWith("/*") && !line.startsWith("*")) {
+
+                String [] tokens = line.split(" ");
+                int i;
+                for (i = 0; i < tokens.length; i++) {
+                    if (tokens[i].contains("class") || tokens[i].contains("interface") || tokens[i].contains("enum")) break;
+                }
+                sb.append(":").append(tokens[++i].split("<")[0]);
+                System.out.println(sb.toString());
+
+                classCount++;
+
                 afterPackage = false;
+
+                sb.setLength(0);
             }
         }
-        System.out.println("class count: " + classCount);
+
+        System.out.println("Here: " + classCount);
     }
 
 }
