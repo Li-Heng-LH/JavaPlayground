@@ -4,6 +4,8 @@ import org.benf.cfr.reader.api.CfrDriver;
 import org.benf.cfr.reader.api.OutputSinkFactory;
 
 import java.io.*;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.*;
 
 public class CFRRunner {
@@ -12,6 +14,7 @@ public class CFRRunner {
     static final String JASPER_PATH = "6.13.0/jasperreports-6.13.0.jar";
 
     public static void run() throws IOException {
+        Instant start = Instant.now();
 
         // Create a stream to hold the output
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -32,7 +35,7 @@ public class CFRRunner {
 
         CfrDriver driver = new CfrDriver.Builder().withOutputSink(mySink).build();
 
-        driver.analyse(Collections.singletonList(JASPER_PATH));
+        driver.analyse(Collections.singletonList(JUNIT_PATH));
 
         ps.flush();
 
@@ -82,7 +85,10 @@ public class CFRRunner {
             }
         }
 
+        Instant finish = Instant.now();
         System.out.println("Here: " + classCount);
+        System.out.println("Time: " + Duration.between(start, finish).toMillis());
+
     }
 
 }
