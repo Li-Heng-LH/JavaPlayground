@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import me.liheng.CFRRunner;
 
 //Tutorial to run a Shell Command in Java
 public class CommandRunner {
@@ -160,6 +161,9 @@ public class CommandRunner {
 
         Instant finish = Instant.now();
         System.out.println("Time: " + Duration.between(start, finish).toMillis());
-    }
 
+
+
+        CFRRunner.run();
+    }
 }

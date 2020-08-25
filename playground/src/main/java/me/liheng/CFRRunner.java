@@ -7,6 +7,7 @@ import java.io.*;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.*;
+import me.liheng.CommandRunner;
 
 public class CFRRunner {
 
@@ -88,6 +89,12 @@ public class CFRRunner {
         Instant finish = Instant.now();
         System.out.println("Here: " + classCount);
         System.out.println("Time: " + Duration.between(start, finish).toMillis());
+
+        try {
+            CommandRunner.run();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
     }
 
