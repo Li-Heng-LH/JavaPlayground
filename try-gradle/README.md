@@ -16,6 +16,14 @@
 
 &nbsp;
 
+### Gradle commands ###
+* `gradle project` : to see the project
+* `gradle dependencies` : to see a list of dependencies
+* `gradle dependencies --configuration compile` : list compile dependencies
+* `gradle dependencies --configuration testCompile` : list testCompile dependencies
+
+&nbsp;
+
 &nbsp;
 ----
 ### Useful links ###
