@@ -1,2 +1,3 @@
 rootProject.name = 'first-gradle'
+include 'json-display'
 

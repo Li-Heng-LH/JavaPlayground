@@ -1,8 +1,5 @@
 package me.liheng.domain;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
 public class SaleEvent {
 
     private String id;
@@ -48,10 +45,7 @@ public class SaleEvent {
         saleEvent.setCity("Naperville");
 
         System.out.println(saleEvent.toString());
-
-        Gson gson = new GsonBuilder().create();
-        String json = gson.toJson(saleEvent);
-        System.out.println(json);
+        System.out.println(JsonDisplay.showJson(saleEvent));
 
     }
 }
