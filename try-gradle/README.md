@@ -24,6 +24,13 @@
 
 &nbsp;
 
+### Gradle wrapper ###
+* a thin layer around gradle
+* checks to see if the required version of gradle is installed. Install automatically if not.
+* then pass command to real gradle
+
+&nbsp;
+
 &nbsp;
 ----
 ### Useful links ###
