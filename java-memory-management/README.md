@@ -9,15 +9,20 @@ Learning from the course: [Java Memory Management](https://www.linkedin.com/lear
 * In an application there is one heap which is shared across all threads, and a number of stacks, one for each thread. 
 As shown below.  
 ![java_memory](docs/%20java_memory.png)
+* Heap is a large amount of memory space compared to stacks.
 * Heap makes it easy to pass objects around threads or code blocks. 
 
 &nbsp;
 * **All objects are stored on the heap.**
-* 
-&nbsp;
-* 
+* **Stacks store local primitive variables, and object references.**
 
 &nbsp;
+
+### Code walkthrough ###
+![memory_illustration](docs/memory_illustration.png)
+&nbsp;
+
+
 
 &nbsp;
 ----
