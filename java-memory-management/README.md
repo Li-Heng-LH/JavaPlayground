@@ -20,9 +20,21 @@ As shown below.
 
 ### Code walkthrough ###
 ![memory_illustration](docs/memory_illustration.png)
+
 &nbsp;
 
+### Pass by Value ###
+* values are copied when passing into functions. 
+* object references are copied when passing into functions. 
+* The `final` keyword:   
+  * **variable can only be assigned once**. 
+  * once it has been assigned, it cannot be altered. 
+* The can and cannot of `final`: 
+  * Can change value from uninitialised to having a value. 
+  * Can change state of object. 
+  * Cannot reassign.
 
+&nbsp;
 
 &nbsp;
 ----
