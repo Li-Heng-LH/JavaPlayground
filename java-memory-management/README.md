@@ -35,6 +35,17 @@ As shown below.
   * Cannot reassign.
 
 &nbsp;
+### Escaping References ###
+* This happens when we have methods that return pointer to the internal object. 
+* Solution 1: Make internal object Iterable. 
+  * Issue: remove() method of iterator, which still mutates.
+* Solution 2: Return a copy of the internal object. 
+  * Issue: Still can mutate the underlying object of the original collection. 
+  * also, cause confusion: ppl may think we are dealing with the original copy. 
+* Solution 3: Return immutable collections: `unmodifyableMap`, `unmodifyableList`. 
+  * 
+
+&nbsp
 
 &nbsp;
 ----
