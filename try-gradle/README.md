@@ -17,10 +17,12 @@
 &nbsp;
 
 ### Gradle commands ###
-* `gradle project` : to see the project
+* To build, `gradle build`
+* `gradle -q project` : to see the project
 * `gradle dependencies` : to see a list of dependencies
 * `gradle dependencies --configuration compile` : list compile dependencies
 * `gradle dependencies --configuration testCompile` : list testCompile dependencies
+* To clean, `gradle clean`
 
 &nbsp;
 
@@ -30,6 +32,8 @@
 * then pass command to real gradle
 
 &nbsp;
+
+
 
 &nbsp;
 ----

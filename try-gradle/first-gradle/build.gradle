@@ -15,3 +15,6 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     compile project(':json-display')
 }
+
+//To customise build dir (for this project only)
+//buildDir = "myBuild"
