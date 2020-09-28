@@ -18,3 +18,12 @@ dependencies {
 
 //To customise build dir (for this project only)
 //buildDir = "myBuild"
+
+
+task showDate {
+    doLast {
+        println ""
+        println 'Current date: ' + new Date()
+        println ""
+    }
+}

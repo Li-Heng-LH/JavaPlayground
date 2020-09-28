@@ -33,7 +33,17 @@
 
 &nbsp;
 
+### Gradle view tool ###
+* Refresh to fetch jars
+* Plus to attach as gradle project
 
+&nbsp;
+
+### Gradle tasks ###
+* By running `gradle build`, other tasks required to run before it will run. 
+* To run the showDate task: `gradle showDate`
+
+&nbsp;
 
 &nbsp;
 ----
