@@ -21,6 +21,9 @@ dependencies {
 
 
 task showDate {
+    dependsOn build
+    group = "My Tasks"
+    description = "Show current date"
     doLast {
         println ""
         println 'Current date: ' + new Date()

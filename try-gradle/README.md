@@ -42,6 +42,7 @@
 ### Gradle tasks ###
 * By running `gradle build`, other tasks required to run before it will run. 
 * To run the showDate task: `gradle showDate`
+* `gradle tasks --all` will show all tasks defined, including those not assigned a group.
 
 &nbsp;
 
