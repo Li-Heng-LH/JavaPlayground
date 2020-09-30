@@ -20,6 +20,7 @@ dependencies {
 //buildDir = "myBuild"
 
 
+/*
 task showDate {
     dependsOn build
     group = "My Tasks"
@@ -29,4 +30,23 @@ task showDate {
         println 'Current date: ' + new Date()
         println ""
     }
+}
+*/
+
+
+//Extend a existing gradle task
+class ShowDate extends DefaultTask {
+
+    String dateMessage = "Date is: "
+
+    @TaskAction
+    void showDate() {
+        println dateMessage + new Date()
+    }
+}
+
+task showDate (type: ShowDate)
+
+task customShowDate (type: ShowDate) {
+    dateMessage = "Custom time is: "
 }
