@@ -94,7 +94,22 @@ and use the command `java myapp.Cool`. The class would not be found.
 
 &nbsp;
 
+## Other ##
+### java vs javac ###
+* To issue javac, got to me/liheng, `javac App.java`
+* javac me.liheng.App.java will NOT work. 
+* **Run javac version 10 on App.java to compile,   
+Use java version 8 to run java me.liheng.App,**  
+"Error: A JNI error has occurred, please check your installation and try again  
+ Exception in thread "main" java.lang.UnsupportedClassVersionError: me/liheng/App has been compiled by a more recent version of the Java Runtime (class file version 54.0),   
+ this version of the Java Runtime only recognizes class file versions up to 52.0"
 
+&nbsp;
+
+### TODO ###
+* self-defined properties
+* javac options
+&nbsp;
 
 &nbsp;
 ----
