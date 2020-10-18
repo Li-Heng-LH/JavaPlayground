@@ -14,5 +14,8 @@ public class App {
                 System.out.println(arg);
             }
         }
+
+        // pass in command line: -DmyProperty=apple
+        System.out.println(System.getProperty("myProperty"));
     }
 }

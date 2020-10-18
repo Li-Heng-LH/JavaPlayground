@@ -91,6 +91,7 @@ and use the command `java myapp.Cool`. The class would not be found.
   * `java me/liheng/App`
   *  At JavaPlayground directory, `java -cp RunJava/out/production/classes me.liheng.App`
 * java me.liheng.App -cp RunJava/out/production/classes will NOT work. 
+* To pass in myProperty: `java -DmyProperty=apple me.liheng.App`
 
 &nbsp;
 
