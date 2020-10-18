@@ -78,6 +78,7 @@ local.properties
 # Package Files
 ######################
 *.jar
+!/compile-with-lib/lib/*.jar
 *.war
 *.ear
 *.db
@@ -119,6 +120,7 @@ Desktop.ini
 # Others
 ######################
 *.class
+!compile-with-lib/output/me/liheng/CompileWithLib.class
 *.*~
 *~
 .merge_file*
