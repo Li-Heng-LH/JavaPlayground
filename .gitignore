@@ -79,6 +79,7 @@ local.properties
 ######################
 *.jar
 !/compile-with-lib/lib/*.jar
+!/try-jar/TryJar.jar
 *.war
 *.ear
 *.db
@@ -120,7 +121,8 @@ Desktop.ini
 # Others
 ######################
 *.class
-!compile-with-lib/output/me/liheng/CompileWithLib.class
+!compile-with-lib/output/me/liheng/*.class
+!try-jar/output/me/liheng/*.class
 *.*~
 *~
 .merge_file*
