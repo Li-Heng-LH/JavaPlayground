@@ -11,9 +11,12 @@
 * Alternatively, cd into output/, `jar cf TryJar.jar me/liheng/*.class`
 3. **Execute Non-Executable JAR**
 * `java -cp TryJar.jar me.liheng.TryJar`.
+
 &nbsp;
 
+### Non-Executable JAR VS Executable JAR ###
 
+&nbsp;
 
 &nbsp;
 ----
