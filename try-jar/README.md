@@ -56,6 +56,12 @@ The main class has to be included in that JAR file.
 
 &nbsp;
 
+### Create Executable JAR without external lib (No Manifest.txt) ###
+* `jar cfe TryJar.jar me.liheng.TryJar -C output me/liheng/TryJar.class`  
+  The 'e' flag (for 'entrypoint') creates or overrides the manifest's Main-Class attribute. 
+* `java -jar TryJar.jar`
+
+&nbsp;
 
 &nbsp;
 ----
