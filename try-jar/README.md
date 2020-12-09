@@ -23,9 +23,11 @@ The main class has to be included in that JAR file.
 &nbsp;
 
 ### What happens if I did not take care of the directory structure? ###
-* In root directory, execute `jar cf TryJar.jar output/me/liheng/*.class`
-* We will see "output/me/liheng/TryJar.class" in TryJar.jar.
-* Then, it will fail to execute me.liheng.TryJar.
+* In root directory, execute `jar cf TryJar.jar output`, wanted to package the whole output,   
+  But will package all directory structure and .DS_Store as well. 
+* In root directory, execute `jar cf TryJar.jar output/me/liheng/*.class`  
+  We will see "output/me/liheng/TryJar.class" in TryJar.jar.  
+  Then, it will fail to execute me.liheng.TryJar.
 
 &nbsp;
 
@@ -40,6 +42,17 @@ The main class has to be included in that JAR file.
 * jar tf jar-file
 * t means table of contents
 * f means file name is specified on command line
+
+&nbsp;
+
+### Create Executable JAR without external lib (Manifest.txt) ###
+* The Jar tool automatically puts a default manifest with the pathname META-INF/MANIFEST.MF into any JAR file you create.
+* To modify the manifest, you must first prepare a text file containing the information you wish to add to the manifest.
+* The basic command has this format:   _jar cfm jar-file manifest-addition input-file(s)_
+* m means merge
+* manifest-addition is the name of the existing text file whose contents you want to **add** to the contents of JAR file's manifest.
+* `jar cfm TryJar.jar Manifest.txt -C output me/liheng/TryJar.class`
+* `java -jar TryJar.jar`
 
 &nbsp;
 
