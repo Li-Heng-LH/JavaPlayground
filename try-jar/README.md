@@ -1,4 +1,4 @@
-# Primitive way to create and execute JAR 
+# Primitive ways to create and execute JAR 
 
 
 ## Some Learning Notes ##
@@ -51,6 +51,7 @@ The main class has to be included in that JAR file.
 * The basic command has this format:   _jar cfm jar-file manifest-addition input-file(s)_
 * m means merge
 * manifest-addition is the name of the existing text file whose contents you want to **add** to the contents of JAR file's manifest.
+* _Manifest.txt_ : `Main-Class: me.liheng.TryJar`
 * `jar cfm TryJar.jar Manifest.txt -C output me/liheng/TryJar.class`
 * `java -jar TryJar.jar`
 
@@ -63,9 +64,25 @@ The main class has to be included in that JAR file.
 
 &nbsp;
 
+### Create Non-Executable JAR with external lib ###
+* `javac -cp lib/* -d output me/liheng/TryJar.java`
+* `jar cf TryJar.jar -C output me/liheng/TryJar.class`
+* `java -cp lib/*:TryJar.jar me.liheng.TryJar`
+
+&nbsp;
+
+### Create Executable JAR with external lib (Need Manifest.txt) ###
+* `javac -cp lib/* -d output me/liheng/TryJar.java`
+* _Manifest.txt_ : `Main-Class: me.liheng.TryJar` and `Class-Path: lib/commons-lang3-3.8.1.jar`
+* `jar cfm TryJar.jar Manifest.txt -C output me/liheng/TryJar.class`
+* `java -jar TryJar.jar`
+
+&nbsp;
+
 &nbsp;
 ----
 ### Useful links ###
 * [Creating a JAR File](https://docs.oracle.com/javase/tutorial/deployment/jar/build.html)
 * [Viewing the Contents of a JAR File](https://docs.oracle.com/javase/tutorial/deployment/jar/view.html)
 * [Run a Java Application from the Command Line](https://www.baeldung.com/java-run-jar-with-arguments)
+* [Guide to Creating and Running a Jar File in Java](https://www.baeldung.com/java-create-jar)

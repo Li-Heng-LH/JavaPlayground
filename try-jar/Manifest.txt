@@ -1,1 +1,2 @@
 Main-Class: me.liheng.TryJar
+Class-Path: lib/commons-lang3-3.8.1.jar

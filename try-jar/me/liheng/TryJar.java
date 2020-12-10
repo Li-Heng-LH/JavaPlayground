@@ -1,6 +1,6 @@
 package me.liheng;
 
-// import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 public class TryJar {
 
@@ -8,6 +8,6 @@ public class TryJar {
 
     	String str = "hello world";
         System.out.println("Original string: " + str);
-        // System.out.println("After StringUtils: " + StringUtils.capitalize(str));
+        System.out.println("After StringUtils: " + StringUtils.capitalize(str));
     }
 }
