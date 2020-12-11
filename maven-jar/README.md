@@ -44,6 +44,15 @@
 
 &nbsp;
 
+### JAR with External Lib: Copy to libs ###
+* _maven-dependency-plugin_  --> _copy-dependencies_
+* _maven-jar-plugin_  --> _classpathPrefix_  --> _libs/_
+* `mvn clean package`
+* `java -jar maven-jar-1.0-SNAPSHOT.jar`
+
+&nbsp;
+
+
 &nbsp;
 ----
 ### Useful links ###

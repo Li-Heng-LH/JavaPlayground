@@ -58,6 +58,26 @@
           <artifactId>maven-surefire-plugin</artifactId>
           <version>2.22.1</version>
         </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-dependency-plugin</artifactId>
+          <executions>
+            <execution>
+              <id>copy-dependencies</id>
+              <phase>prepare-package</phase>
+              <goals>
+                <goal>copy-dependencies</goal>
+              </goals>
+              <configuration>
+                <outputDirectory>
+                  ${project.build.directory}/libs  <!-- project build directory is usually the target folder -->
+                </outputDirectory>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
+
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
           <version>3.0.2</version>
@@ -66,8 +86,14 @@
               <manifest>
                 <mainClass>me.liheng.MavenJar</mainClass>
                 <addClasspath>true</addClasspath>
-                <classpathPrefix>/Users/liheng/.m2/repository/</classpathPrefix>
-                <classpathLayoutType>repository</classpathLayoutType>
+
+                <!-- Without copying dependencies -->
+                <!-- <classpathPrefix>/Users/liheng/.m2/repository/</classpathPrefix> -->
+                <!--<classpathLayoutType>repository</classpathLayoutType>-->
+
+                <!-- With copied dependencies -->
+                <classpathPrefix>libs/</classpathPrefix>
+
               </manifest>
             </archive>
           </configuration>
@@ -91,5 +117,12 @@
         </plugin>
       </plugins>
     </pluginManagement>
+
+    <plugins>
+      <plugin>
+        <artifactId>maven-dependency-plugin</artifactId>
+      </plugin>
+    </plugins>
+
   </build>
 </project>
