@@ -70,6 +70,12 @@
 
 &nbsp;
 
+### JAR with External Lib: Spring Boot Maven Plugin ###
+* Add _spring-boot-maven-plugin_
+* `mvn clean package -P spring-boot-plugin`
+* `java -jar maven-jar-1.0-SNAPSHOT-spring-boot.jar`
+
+&nbsp;
 
 &nbsp;
 ----
