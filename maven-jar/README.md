@@ -28,7 +28,7 @@
 ### JAR with External Lib: Usual build ###
 * Launch java with classpath
 * External jars are in .m2 directory
-* `mvn clean package`
+* `mvn clean package -P usual-build`
 * `java -cp /Users/liheng/.m2/repository/org/apache/commons/commons-lang3/3.11/commons-lang3-3.11.jar:/Users/liheng/.m2/repository/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar:maven-jar-1.0-SNAPSHOT.jar me.liheng.MavenJar`
 
 &nbsp;
@@ -39,7 +39,7 @@
 * `<addClasspath>true</addClasspath>`
 * `<classpathPrefix>/Users/liheng/.m2/repository/</classpathPrefix>`
 * `<classpathLayoutType>repository</classpathLayoutType>`
-* `mvn clean package`
+* `mvn clean package -P archiver`
 * `java -jar maven-jar-1.0-SNAPSHOT.jar`
 
 &nbsp;
@@ -47,7 +47,7 @@
 ### JAR with External Lib: Copy to libs ###
 * _maven-dependency-plugin_  --> _copy-dependencies_
 * _maven-jar-plugin_  --> _classpathPrefix_  --> _libs/_
-* `mvn clean package`
+* `mvn clean package -P copy-libs`
 * `java -jar maven-jar-1.0-SNAPSHOT.jar`
 
 &nbsp;
@@ -57,7 +57,7 @@
   The Apache Maven Assembly Plugin allows users to aggregate the project output along with its dependencies, modules, 
   site documentation, and other files into a single, runnable package.  
   Maven Assembly Plugin will automatically copy all required dependencies into a jar file.
-* `mvn clean package`
+* `mvn clean package -P assembly-plugin`
 * `java -jar maven-jar-1.0-SNAPSHOT-jar-with-dependencies.jar`
 
 &nbsp;
