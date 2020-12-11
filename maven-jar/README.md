@@ -52,6 +52,17 @@
 
 &nbsp;
 
+### JAR with External Lib: Apache Maven Assembly Plugin ###
+* Add _maven-assembly-plugin_  
+  The Apache Maven Assembly Plugin allows users to aggregate the project output along with its dependencies, modules, 
+  site documentation, and other files into a single, runnable package.  
+  Maven Assembly Plugin will automatically copy all required dependencies into a jar file.
+* `mvn clean package`
+* `java -jar maven-jar-1.0-SNAPSHOT-jar-with-dependencies.jar`
+
+&nbsp;
+
+
 
 &nbsp;
 ----
