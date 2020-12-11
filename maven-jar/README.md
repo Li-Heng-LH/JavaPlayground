@@ -62,6 +62,13 @@
 
 &nbsp;
 
+### JAR with External Lib: Apache Maven Shade Plugin ###
+* Add _maven-shade-plugin_  
+  Apache Maven Shade Plugin provides the capability to package the artifact in an uber-jar.
+* `mvn clean package -P shade-plugin`
+* `java -jar maven-jar-1.0-SNAPSHOT-shaded.jar`
+
+&nbsp;
 
 
 &nbsp;
