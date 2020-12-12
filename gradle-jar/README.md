@@ -70,12 +70,23 @@
 
 &nbsp;
 
-### Create Fat JAR with external lib ###
+### Create Fat JAR with external lib: overriding default jar task ###
 * Basically, a fat jar (also known as uber-jar) is a self-sufficient archive 
 which contains both classes and dependencies needed to run an application.
-* 
+* Add _from_ in _jar_ task.
+* `gradle build`
+* `java -jar gradle-jar-1.0-SNAPSHOT.jar`
 
 &nbsp;
+
+### Create Fat JAR with external lib: Creating a Separate Task ###
+* Add task _customFatJar_
+* `gradle customFatJar`
+* `java -jar all-in-one-jar-1.0-SNAPSHOT.jar`
+
+&nbsp;
+
+
 
 &nbsp;
 ----

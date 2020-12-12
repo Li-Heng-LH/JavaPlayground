@@ -15,8 +15,22 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
 
-jar {
+// Create Fat JAR with external lib: overriding default jar task
+//jar {
+//    manifest {
+//        attributes 'Main-Class': 'me.liheng.GradleJar'
+//    }
+//    from {
+//        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+//    }
+//}
+
+//Create Fat JAR with external lib: Creating a Separate Task
+task customFatJar(type: Jar) {
     manifest {
         attributes 'Main-Class': 'me.liheng.GradleJar'
     }
+    baseName = 'all-in-one-jar'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
 }
