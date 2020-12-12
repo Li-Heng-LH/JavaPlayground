@@ -64,8 +64,21 @@
 
 &nbsp;
 
+### Create Non-Executable JAR with external lib ###
+* `gradle build`
+* _java -cp gradle-jar-1.0-SNAPSHOT.jar:PATH_TO_LIBS me.liheng.GradleJar_
+
+&nbsp;
+
+### Create Fat JAR with external lib ###
+* Basically, a fat jar (also known as uber-jar) is a self-sufficient archive 
+which contains both classes and dependencies needed to run an application.
+* 
+
+&nbsp;
 
 &nbsp;
 ----
 ### Useful links ###
 * [Creating runnable JAR with Gradle](https://stackoverflow.com/questions/21721119/creating-runnable-jar-with-gradle)
+* [Creating a Fat Jar in Gradle](https://www.baeldung.com/gradle-fat-jar)
