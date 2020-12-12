@@ -86,7 +86,13 @@ which contains both classes and dependencies needed to run an application.
 
 &nbsp;
 
+### Create Fat JAR with external lib: Shadow plugin ###
+* Need _manifest_ in _jar_ task
+* Add plugin: _id 'com.github.johnrengelman.shadow' version '6.1.0'_
+* `gradle shadowJar`
+* `java -jar gradle-jar-1.0-SNAPSHOT-all.jar`
 
+&nbsp;
 
 &nbsp;
 ----
