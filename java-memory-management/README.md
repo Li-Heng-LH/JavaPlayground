@@ -13,6 +13,7 @@ As shown below.
 * Heap makes it easy to pass objects around threads or code blocks. 
 
 &nbsp;
+
 * **All objects are stored on the heap.**
 * **Stacks store local primitive variables, and object references.**
 
@@ -35,21 +36,23 @@ As shown below.
   * Cannot reassign.
 
 &nbsp;
-### Escaping References ###
-* This happens when we have methods that return pointer to the internal object. 
+
+### Escaping References with collections ###
+* This happens when we have methods that return pointer to the internal object.   
+  In this case, getCustomers() that returns private records.
 * Solution 1: Make internal object Iterable. 
   * Issue: remove() method of iterator, which still mutates.
 * Solution 2: Return a copy of the internal object. 
   * Issue: Still can mutate the underlying object of the original collection. 
+  * As the copy is a shallow copy. 
   * also, cause confusion: ppl may think we are dealing with the original copy. 
 * Solution 3: Return immutable collections: `unmodifyableMap`, `unmodifyableList`. 
-  * 
 
-&nbsp
+&nbsp;
 
 &nbsp;
 ----
 ### Useful links ###
-* 
+* [Copying a HashMap in Java](https://www.baeldung.com/java-copy-hashmap)
 
 

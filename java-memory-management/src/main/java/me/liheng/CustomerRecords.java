@@ -17,6 +17,9 @@ public class CustomerRecords implements Iterable<Customer> {
     }
 
     public Map<String, Customer> getCustomers() {
+        //Original:
+        //return this.records;
+
         //Solution 2: return a copy of internal object
         //return new HashMap<String, Customer>(this.records);
 
