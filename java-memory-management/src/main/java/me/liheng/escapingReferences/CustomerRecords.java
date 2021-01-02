@@ -1,4 +1,4 @@
-package me.liheng;
+package me.liheng.escapingReferences;
 
 import java.util.Collections;
 import java.util.HashMap;

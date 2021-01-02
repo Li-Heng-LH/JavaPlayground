@@ -1,4 +1,4 @@
-package me.liheng;
+package me.liheng.escapingReferences;
 
 public interface ReadOnlyCustomer {
     String getName();
