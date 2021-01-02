@@ -16,6 +16,8 @@ public class Main {
             System.out.println(next);
         }
 
+        ReadOnlyCustomer john = records.getReadOnlyCustomerByName("John");
+        //john.setName("ABC"); //Error
     }
 
 }

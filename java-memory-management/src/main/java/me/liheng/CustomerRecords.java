@@ -32,4 +32,13 @@ public class CustomerRecords implements Iterable<Customer> {
         return records.values().iterator();
     }
 
+    //Return a copy of custom object
+    public Customer getCustomerByName(String name) {
+        return new Customer(this.records.get(name));
+    }
+
+    public ReadOnlyCustomer getReadOnlyCustomerByName(String name) {
+        return this.records.get(name);
+    }
+
 }

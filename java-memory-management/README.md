@@ -50,6 +50,16 @@ As shown below.
 
 &nbsp;
 
+### Escaping References by returning copy of custom object ###
+* However, this can be confusing as client may think he is changing the original copy. 
+
+&nbsp;
+
+### Escaping References by returning a read-only version ###
+* Interface that only has getter methods.
+
+&nbsp;
+
 &nbsp;
 ----
 ### Useful links ###
