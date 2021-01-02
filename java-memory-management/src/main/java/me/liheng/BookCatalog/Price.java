@@ -16,16 +16,16 @@ public class Price {
         rates.put("EUR", 0.8);
     }
 
-    //TODO: remove escaping references
+    //Removed escaping references
     public Double convert(String toCurrency) {
 
         if (toCurrency.equals("USD")) {
-            return value;
+            return new Double(value);
         }
         else {
             Double conversion = rates.get("USD") / rates.get(toCurrency);
-            value = conversion * value;
-            return value;
+            Double result = conversion * value;
+            return result;
         }
     }
 

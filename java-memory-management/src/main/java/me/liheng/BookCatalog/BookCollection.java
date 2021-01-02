@@ -26,7 +26,7 @@ public class BookCollection {
         books.add(new Book(10,"The Count of Monte Christo","Alexandre Dumas",3.99));
     }
 
-    //TODO: remove escaping references
+    //It is fine. Book is read-only immutable class.
     public Book findBookByName(String title) {
         for (Book book : books) {
             if (book.getTitle().equals(title)) {

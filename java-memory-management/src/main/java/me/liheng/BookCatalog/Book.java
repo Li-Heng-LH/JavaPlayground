@@ -29,7 +29,7 @@ public class Book {
         return title + " by " + author;
     }
 
-    //TODO: remove escaping references
+    //It is fine since Price is immutable, read-only.
     public Price getPrice() {
         return this.price;
     }

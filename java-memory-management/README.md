@@ -60,6 +60,12 @@ As shown below.
 
 &nbsp;
 
+### Escaping References ###
+* Is fine if return type is primitive or String, or the class is immutable/read-only.
+* If class is mutable, make class implement a read-only interface.
+
+&nbsp;
+
 &nbsp;
 ----
 ### Useful links ###
