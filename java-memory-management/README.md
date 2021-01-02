@@ -66,6 +66,27 @@ As shown below.
 
 &nbsp;
 
+### Garbage Collection Intro ###
+* Stack is efficient. Java can manage it easily. 
+* Some languages allow users to choose to create objects on either stack or heap.
+* Java does not. It tries to provide a single, clean way of doing things. 
+* Actually, modern VM is very efficient and clever. If it detects the object created is not going to be shared,
+VM will in fact create the object in stack.   
+  But in general, all objects are stored on the heap. Stacks store local primitive variables, and object references.
+* VM tries to make the most efficient choice for us. So our code will generally run in an optimised way. 
+
+&nbsp;
+
+### String Pool ###
+* There is no harm for 2 variables to point to the same String literal object in the heap, 
+* because **String is immutable**. 
+* JVM puts Strings into a pool, and reuse them whenever it can. 
+* In general, this only happens with String literals, and concated Strings.   
+  Does not apply to Strings that are calculated from something else. 
+* String's `intern()` method: force VM to place String in the pool. 
+
+&nbsp;
+
 &nbsp;
 ----
 ### Useful links ###
