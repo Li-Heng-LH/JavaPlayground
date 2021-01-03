@@ -87,6 +87,23 @@ VM will in fact create the object in stack.
 
 &nbsp;
 
+### Garbage Collection Eligibility ###
+* In C or C++, we need to state when an object is no longer needed, by calling a method like free().
+* In VB, need to set the object to null. 
+* If programmer did not release the memory, the memory will never be released.   
+  Even when programme finishes, the memory will still be in use.   
+  The only way to free it up is to restart computer. 
+  This will result in memory leak. 
+* Java avoids memory leaks by:   
+  * Running on a virtual machine.   
+  Assuming JVM is implemented correctly, memory leaks in OS-level should be impossible. 
+  * Adopting GC strategy. 
+  
+* Any object on the heap that cannot be **reached** through a reference from the stack is eligible for garbage collection. 
+
+&nbsp;
+
+
 &nbsp;
 ----
 ### Useful links ###
