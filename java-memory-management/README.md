@@ -100,6 +100,10 @@ VM will in fact create the object in stack.
   * Adopting GC strategy. 
   
 * Any object on the heap that cannot be **reached** through a reference from the stack is eligible for garbage collection. 
+* Note: it is incorrect to just say "unreferenced" object. 
+* **It is possible for a referenced object to be garbage**.   
+  For example, referenced objects in an unreachable collection.   
+  Another example, circular references. 
 
 &nbsp;
 
