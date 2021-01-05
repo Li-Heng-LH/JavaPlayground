@@ -107,6 +107,12 @@ VM will in fact create the object in stack.
 
 &nbsp;
 
+### gc() and finalize() ###
+* In general GC should be treated as an automated process. 
+* gc() will tell JVM to run GC process, but there is no guarantee that the VM will do. 
+* gc() may be useful when we need to compare 2 methods. Call gc() to ensure clean start env. 
+
+&nbsp;
 
 &nbsp;
 ----
