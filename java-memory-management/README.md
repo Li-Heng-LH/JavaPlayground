@@ -112,6 +112,25 @@ VM will in fact create the object in stack.
 * gc() will tell JVM to run GC process, but there is no guarantee that the VM will do. 
 * gc() may be useful when we need to compare 2 methods. Call gc() to ensure clean start env. 
 
+
+* GC will temporarily stop all threads. 
+* So while GC is taking place, your application is temporarily suspended, and it will not resume till GC completes. 
+* Therefore, GC needs to be fast, and reasonably infrequent. 
+* Therefore, forcing a gc to happen is generally not a good idea. 
+
+
+* finalize() is actually quite useless. 
+* The problem is, we are not going to know if it is definitely going to run. Or if it is, when it is going to run. 
+* Should never close an open resource in the finalize() method. In that case we never know when that resource is going
+to get closed. 
+
+
+* Garbage Collector might not run. 
+* It will run only when it is needed to keep the heap nice and tiy while the application is running. 
+* If the programme reached the end, even if the heap is cluttered with lots of objects eligible for GC,   
+  JVM might decide not to bother running GC. 
+* When the application is finished, JVM will be destroyed and removed from memory. 
+
 &nbsp;
 
 &nbsp;

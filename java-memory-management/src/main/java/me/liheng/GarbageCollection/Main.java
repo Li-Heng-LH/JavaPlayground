@@ -13,7 +13,7 @@ public class Main {
         // because as soon as each loop finishes,
         // the newly created object is no longer referenced.
         Customer c;
-        for (int i=0; i<1000000; i++)
+        for (int i=0; i<100; i++)
         {
             c = new Customer("John");
         }
