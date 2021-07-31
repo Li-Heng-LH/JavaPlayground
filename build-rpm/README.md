@@ -34,6 +34,11 @@
   
 &nbsp;
 
+### maven-assembly-plugin ###
+* Need to define <phase>
+* pom.xml of the project is not included into the FAT JAR.
+
+&nbsp;
 
 &nbsp;
 ----
