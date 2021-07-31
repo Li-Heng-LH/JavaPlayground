@@ -35,8 +35,18 @@
 &nbsp;
 
 ### maven-assembly-plugin ###
-* Need to define <phase>
+* Need to define phase
 * pom.xml of the project is not included into the FAT JAR.
+* Note: when the phase is defined to be package, the plugin is added to the goals already bound to package phase (maven-jar-plugin)
+* Note: so, **maven-jar-plugin is executed first, then maven-assembly-plugin.** 
+
+&nbsp;
+
+### rpm-maven-plugin ###
+* Only with plugin definition, without defining executions and specifying goal, rpm-maven-plugin is not executed. 
+* After configured with executions, an RPM is generated from the project whenever the project is packaged. 
+* No need to define a phase
+* Again, maven-jar-plugin runs first, then rpm-maven-plugin. 
 
 &nbsp;
 
