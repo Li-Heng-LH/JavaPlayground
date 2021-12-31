@@ -3,7 +3,8 @@
 
 ## Some Learning Notes ##
 
-###  ###
+### Steps to run App class ###
+1. 
 
 
 &nbsp;

@@ -24,6 +24,8 @@ public class App {
         properties.setProperty(SolaceProperties.AuthenticationProperties.SCHEME_BASIC_USER_NAME, "client");// client-username
         properties.setProperty(SolaceProperties.AuthenticationProperties.SCHEME_BASIC_PASSWORD, "client");
 
+        //TODO: test with cloud
+
         final MessagingService messagingService = MessagingService.builder(ConfigurationProfile.V1)
                 .fromProperties(properties).build().connect();  // blocking connect to the broker
 
@@ -54,5 +56,7 @@ public class App {
 //        publisher.terminate(500);
 //        receiver.terminate(500);
 //        messagingService.disconnect();
+
+        //TODO: Separate into pub and sub components
     }
 }
