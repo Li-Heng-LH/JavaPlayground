@@ -45,10 +45,23 @@ public class App {
         System.out.printf(" ~ Run this sample twice splitscreen to see true publish-subscribe. ~%n%n");
 
         OutboundMessageBuilder messageBuilder = messagingService.messageBuilder();
+
+        //publish and receive 1st message
         OutboundMessage message = messageBuilder.build("Hello world!!!");
         String topicString = "solace/samples/" + "java/hello/" + "lh";
         System.out.printf(">> Calling send() on %s%n",topicString);
         publisher.publish(message, Topic.of(topicString));
+
+        //publish and receive 2nd message
+        OutboundMessage message2 = messageBuilder.build("Second message");
+        System.out.printf(">> Calling send() on %s%n",topicString);
+        publisher.publish(message2, Topic.of(topicString));
+
+        //publish and receive 3rd message from a different topic
+        String topicString2 = "solace/samples/" + "java/hello/" + "YAY";
+        OutboundMessage message3 = messageBuilder.build("Third message");
+        System.out.printf(">> Calling send() on %s%n",topicString2);
+        publisher.publish(message3, Topic.of(topicString2));
 
 
         Thread.sleep(5000);  // take a pause
