@@ -1,15 +1,20 @@
 package me.liheng;
 
-import io.reactivex.rxjava3.core.Observable;
-import io.reactivex.rxjava3.disposables.Disposable;
+
+import io.reactivex.Observable;
 
 public class TryRxJava {
 
     public static void main( String[] args ) {
 
-        Observable.just("Hello", "world").subscribe(o -> {
-            Thread.sleep(3000);
-            System.out.println(o);
-        });
+        // completely synchronous
+        // Observable.create --> Observable
+        // Observable.subscribe --> Disposable/Subscription
+        // The Observable type is lazy, meaning it does nothing until it is subscribed to
+        // Because Observable is lazy, Observables can be reused
+        Observable.create(s -> {
+            s.onNext("Hello World!");
+            s.onComplete();
+        }).subscribe(System.out::println);
     }
 }

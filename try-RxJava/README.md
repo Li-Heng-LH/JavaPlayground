@@ -29,6 +29,16 @@
 * `Observable<T>`: Emits 0 or n items and terminates with success or error event.
 * `Flowable<T>`: Emits 0 or n items and terminates with success or error event.   
   Supports backpressure, which allows to control how fast a source emits items.
+* The Observable type is lazy, meaning it does nothing until it is subscribed to. 
+* Because Observable is lazy, Observables can be reused. 
+* Observable represents a flowing sequence of events. 
+* Observable is push-based, meaning that it decides when to produce values. 
+* Observable<T> can actually produce 3 types of events: 
+  1. values of type T,
+  2. completion event, 
+  3. error event
+* Every Observable can emit an arbitrary number of values optionally followed by completion **or** error (but not both) 
+* Because of asynchronous nature of Observable, they emit error event, instead of exceptions. 
 * 
 
 &nbsp;
