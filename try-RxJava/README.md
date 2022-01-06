@@ -39,9 +39,13 @@
   3. error event
 * Every Observable can emit an arbitrary number of values optionally followed by completion **or** error (but not both) 
 * Because of asynchronous nature of Observable, they emit error event, instead of exceptions. 
-* 
 
 &nbsp;
+
+### Observer ###
+* `Observer<T>` is a container for all 3 callbacks. 
+
+&nbsp; 
 
 &nbsp;
 ----
