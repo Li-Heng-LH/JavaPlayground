@@ -2,17 +2,15 @@ package me.liheng;
 
 import static org.junit.Assert.assertTrue;
 
-import org.junit.Test;
-
 /**
- * Unit test for simple App.
+ * Unit test for simple Test.
  */
-public class AppTest 
+public class TestTest
 {
     /**
      * Rigorous Test :-)
      */
-    @Test
+    @org.junit.Test
     public void shouldAnswerWithTrue()
     {
         assertTrue( true );
