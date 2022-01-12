@@ -18,7 +18,7 @@ public class ManualDirectPublisher {
 
         final MessagingService messagingService = MessagingService.builder(ConfigurationProfile.V1)
                 .fromProperties(Util.getProperties())
-                .withAuthenticationStrategy(AuthenticationStrategy.BasicUserNamePassword.of("client", "client"))
+                .withAuthenticationStrategy(AuthenticationStrategy.BasicUserNamePassword.of(Util.userName, Util.password))
                 .build().connect();  // blocking connect to the broker
 
         final DirectMessagePublisher publisher = messagingService.createDirectMessagePublisherBuilder()

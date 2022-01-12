@@ -6,8 +6,12 @@ import java.util.Properties;
 
 public class Util {
 
-    public static String [] topicStrings = new String [] {
+    public static final String [] topicStrings = new String [] {
             "topic/zero", "topic/one", "topic/two", "topic/three", "topic/four"};
+
+    public static final String userName = "client";
+
+    public static final String password = "client";
 
     public static Properties getProperties() {
         final Properties properties = new Properties();
