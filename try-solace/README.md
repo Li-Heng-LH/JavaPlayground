@@ -84,6 +84,26 @@ but only 1 can successfully consume an event.
 
 &nbsp;
 
+### Topic Structure and Wildcards ###
+* Max length of topic is 250 bytes. 
+* The length could have impact on network efficiency. 
+* Topics are case-sensitive. 
+* Each "/.../" is a level. 
+* **Wildcards are mainly used for consumers.**  
+  **If producers publish to topics with wildcards, that will result in the wildcard being interpreted as a literal character.**
+* `*` wildcard is used to **match 0 or more characters within a singe level**.   
+  ![star-wildcard](images/star-wildcard.png)
+* `>` wildcard is used to **match 1 or more levels at the end of the topic**.   
+  ![greater-wildcard](images/greater-wildcard.png)
+* Topic design guidelines: 
+  * Use consistent case within a level. 
+  * Use abbreviations to reduce length of topic. 
+  * Minimise use of special symbols. For readability and minimising typos.   
+    But exception is to use underscore for spaces. 
+
+&nbsp;
+
+
 
 &nbsp;
 ----
