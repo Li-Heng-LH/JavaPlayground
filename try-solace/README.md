@@ -65,7 +65,7 @@ but only 1 can successfully consume an event.
 
 &nbsp;
 
-### Quality of Service : Reliability ###
+### Quality of Service and Delivery Modes ###
 * QoS determines if an event should be transmitted reliably or not.  
 * Direct delivery: less reliable, for high throughput and low latency scenarios, may miss some events 
 * Guaranteed delivery: 0 message loss, 
@@ -103,6 +103,19 @@ but only 1 can successfully consume an event.
 
 &nbsp;
 
+### Message VPN ###
+* Enables sharing of single event broker.
+* Allows for data separation and resource partitioning. 
+* Different developers can share same event broker with the same settings, but still have data separations. 
+
+&nbsp;
+
+### Creating Queues and Mapping Topics to Queues ### 
+* Queues need to be created first before we can publish to and consume from it. 
+* Several queues can be mapped to the same topic subscriptions.   
+  Queue -> Subscription -> Add subscription
+
+&nbsp;
 
 
 &nbsp;
