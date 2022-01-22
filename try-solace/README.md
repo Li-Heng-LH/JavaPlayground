@@ -117,6 +117,22 @@ but only 1 can successfully consume an event.
 
 &nbsp;
 
+### More Notes on basic concepts ###
+* Publish-Subscribe: messages are processed multiple times by different consumers.
+* Point-to-Point: messages are processed by a single Consumer. 
+* Request-Reply: two-way communication using separate point-to-point channels. 
+* A message VPN allows for the segregation of topic space and clients. 
+* Applications or devices that connect to event brokers are represented as clients.
+* A client corresponds to a single logical connection to the event broker   
+  that is capable of **sending and/or receiving** messages. 
+* Client Names are unique within a given Message VPN. 
+
+&nbsp;
+
+###  ###
+* 
+
+&nbsp;
 
 &nbsp;
 ----
