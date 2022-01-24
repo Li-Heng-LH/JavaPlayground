@@ -152,6 +152,25 @@ but only 1 can successfully consume an event.
 
 &nbsp;
 
+### Interface DirectMessageReceiver ###
+| start()                       | startAsync()                                      |
+|-------------------------------|---------------------------------------------------|
+| returns DirectMessageReceiver | returns CompletableFuture <DirectMessageReceiver> |
+|                               | starts DirectMessageReceiver in a separate thread |
+
+
+| receiveMessage()       | receiveAsync(messageHandler)                  |
+|------------------------|-----------------------------------------------|
+| returns InboundMessage | void                                          |
+|                        | receives and process msg in a separate thread |
+
+| addSubscription(topicSubscription) | addSubscriptionAsync(topicSubscription, listener) |
+|------------------------------------|---------------------------------------------------|
+|                                    | Add subscription in a separate thread             |
+
+
+&nbsp;
+
 &nbsp;
 ----
 ### Useful links ###
