@@ -126,11 +126,29 @@ but only 1 can successfully consume an event.
 * A client corresponds to a single logical connection to the event broker   
   that is capable of **sending and/or receiving** messages. 
 * Client Names are unique within a given Message VPN. 
+* Direct messages use case: https://docs.solace.com/Basics/Direct-Messages.htm 
+* Guaranteed messages: https://docs.solace.com/Basics/Guaranteed-Messages.htm
 
 &nbsp;
 
-###  ###
-* 
+### Messages and SMF ###
+* Solace PubSub+ uses the Solace Message Format (SMF) protocol for client and event broker communications.
+* SMF uses a proprietary binary message format that   
+  provides an efficient method of **encapsulating messages for transmission over the platform**. 
+* Messages produced by one Solace API can be understood by any other consuming Solace API. 
+
+&nbsp;
+
+### API's ###
+* Solace Messaging APIs: Java, JCSMP ... 
+* Open APIs: JMS
+
+&nbsp;
+
+### Connection to cloud ### 
+* [Landing page](https://console.solace.cloud/)
+* To retrieve the connection credentials:   
+  "Cluster Manager" -> "vpn" -> "connect"
 
 &nbsp;
 
@@ -138,3 +156,7 @@ but only 1 can successfully consume an event.
 ----
 ### Useful links ###
 * [solace-samples-java](https://github.com/SolaceSamples/solace-samples-java/blob/main/src/main/java/com/solace/samples/java/HelloWorld.java)
+* [SMF vs JMS](https://docs.solace.com/ConceptMaps/Component-Maps.htm#Differen)
+* [Java API](https://docs.solace.com/Solace-PubSub-Messaging-APIs/Java-API/java-api-home.htm)
+* [JCSMP API](https://docs.solace.com/Solace-PubSub-Messaging-APIs/JCSMP-API/jcsmp-api-home.htm)
+* [Direct Messaging VS Guaranteed](https://docs.solace.com/Solace-PubSub-Messaging-APIs/API-Developer-Guide/Message-Delivery-Modes.htm)

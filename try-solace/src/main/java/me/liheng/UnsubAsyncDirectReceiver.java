@@ -42,9 +42,14 @@ public class UnsubAsyncDirectReceiver {
 
         // Add TopicSubscription's
         for (int i = 0; i < Util.topicStrings.length; i++) {
+//            receiver.addSubscriptionAsync(TopicSubscription.of(Util.topicStrings[i]),
+//                    (topic, op, e) -> {
+//                        System.out.println(op);
+//                    });
             receiver.addSubscription(TopicSubscription.of(Util.topicStrings[i]));
         }
 
+        System.out.println("Thread cout: " + Thread.activeCount());
         System.out.println("Listening...");
         receiver.receiveAsync(messageHandler, Executors.newFixedThreadPool(3));
 

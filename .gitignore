@@ -2,6 +2,7 @@
 # Project Specific
 ######################
 **/out/
+solace-cloud.properties
 
 ######################
 # Node
