@@ -6,7 +6,7 @@ import me.liheng.Util;
 
 import java.io.IOException;
 
-public class CloudSyncDirectReceiver {
+public class AddSubscriptionsSyncVsAsync {
 
     public static void main(String[] args) throws IOException, InterruptedException {
 

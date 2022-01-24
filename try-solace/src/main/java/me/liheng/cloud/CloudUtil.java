@@ -20,7 +20,7 @@ public class CloudUtil {
     public static MessagingService getMessagingService() throws IOException {
         if(messagingService == null) {
 
-            System.out.println("Testing singleton...");
+            System.out.println("*** Creating messagingService... ***");
 
             Properties properties = new Properties();
             properties.load(new FileInputStream("src/main/resources/solace-cloud.properties"));
