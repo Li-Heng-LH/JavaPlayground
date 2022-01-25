@@ -27,4 +27,8 @@ public class CloudDirectAsyncReceiver {
             //no-op
         }
     }
+
+    public static void main(String[] args) throws IOException, InterruptedException {
+        run();
+    }
 }

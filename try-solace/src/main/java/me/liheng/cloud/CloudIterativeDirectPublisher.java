@@ -30,4 +30,8 @@ public class CloudIterativeDirectPublisher {
             e.printStackTrace();
         }
     }
+
+    public static void main(String[] args) {
+        run();
+    }
 }
