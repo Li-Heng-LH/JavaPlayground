@@ -25,7 +25,7 @@ public class SyncDirectReceiver {
 
         while (true) {
             System.out.println("Listening...");
-            InboundMessage inboundMessage = receiver.receiveMessage();
+            InboundMessage inboundMessage = receiver.receiveMessage(); //This is a BLOCKING call
             System.out.printf("*** Received message on thread: %s : %s %n",
                     Thread.currentThread().getId(),
                     inboundMessage.getPayloadAsString());

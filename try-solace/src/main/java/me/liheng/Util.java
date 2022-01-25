@@ -9,6 +9,10 @@ public class Util {
     public static final String [] topicStrings = new String [] {
             "topic/zero", "topic/one", "topic/two", "topic/three", "topic/four"};
 
+    public static final String[] persistentTopics = new String[] {
+            "persistent/one", "persistent/two"
+    };
+
     public static final String userName = "client";
 
     public static final String password = "client";
