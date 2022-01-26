@@ -12,12 +12,14 @@ public class UsingObserver {
         Observer<String> printObserver = new Observer<String>() {
             private Disposable disposable;
 
+            // Someone will invoke this and pass me a disposable
             @Override
             public void onSubscribe(Disposable disposable) {
                 System.out.println("Subscribing");
                 this.disposable = disposable;
             }
 
+            // Someone will invoke this and pass me a string
             @Override
             public void onNext(String s) {
                 // Disposing
