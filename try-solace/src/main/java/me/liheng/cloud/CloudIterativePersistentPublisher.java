@@ -19,7 +19,7 @@ public class CloudIterativePersistentPublisher {
             // listener that processes all delivery confirmations/timeouts for all messages all
             // messages being send using given instance of messagePublisher
             final PersistentMessagePublisher.MessagePublishReceiptListener deliveryConfirmationListener = (publishReceipt) -> {
-                System.out.println("Published");
+                System.out.println("ACK published");
             };
 
             // listen to all delivery confirmations for all messages being send
