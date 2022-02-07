@@ -48,6 +48,6 @@ public class DirectToQueueDemo {
         directReceiver.terminate(500);
         CloudUtil.getMessagingService().disconnect();
 
-        //TODO: test if can send to queue directly?
+        //TODO: test if can send to queue directly? -> Not yet supported
     }
 }
