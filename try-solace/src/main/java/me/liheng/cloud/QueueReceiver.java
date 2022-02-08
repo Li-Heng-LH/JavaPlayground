@@ -25,7 +25,7 @@ public class QueueReceiver {
 
             while (true) {
                 InboundMessage message = receiver.receiveMessage(); //This is a BLOCKING call
-                System.out.println("< " + queueName + " Receiver Received message: " + message.getPayloadAsString());
+                System.out.println("< " + queueName + " Receiver Received message: " + message.getPayloadAsString() + ", destination : " + message.getDestinationName());
                 receiver.ack(message);
             }
 
