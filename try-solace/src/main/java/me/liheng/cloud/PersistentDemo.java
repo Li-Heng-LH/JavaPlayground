@@ -3,7 +3,7 @@ package me.liheng.cloud;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class CloudPersistentDemo {
+public class PersistentDemo {
 
     public static void main(String[] args) {
 

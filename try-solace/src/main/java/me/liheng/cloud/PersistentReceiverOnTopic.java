@@ -46,5 +46,8 @@ public class PersistentReceiverOnTopic {
         queueReceiver.terminate(500);
         CloudUtil.getMessagingService().disconnect();
 
+        //TODO: remove non-existing topic sub?
+        //TODO: 2 persistent receivers on same queue?
+
     }
 }
