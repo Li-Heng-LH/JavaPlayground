@@ -29,15 +29,20 @@ public class CloudUtil {
             cloudProperties.setProperty(SolaceProperties.TransportLayerProperties.HOST, properties.getProperty("cloud-SMF-host"));
             cloudProperties.setProperty(SolaceProperties.ServiceProperties.VPN_NAME, properties.getProperty("cloud-vpn"));
 
-            messagingService = MessagingService.builder(ConfigurationProfile.V1)
-                    .fromProperties(cloudProperties)
-                    .withAuthenticationStrategy(AuthenticationStrategy.BasicUserNamePassword.of(
-                            properties.getProperty("cloud-username"),
-                            properties.getProperty("cloud-password")))
-                    .build().connect();  // blocking connect to the broker
-
+            try {
+                messagingService = MessagingService.builder(ConfigurationProfile.V1)
+                        .fromProperties(cloudProperties)
+                        .withAuthenticationStrategy(AuthenticationStrategy.BasicUserNamePassword.of(
+                                properties.getProperty("cloud-username"),
+                                properties.getProperty("cloud-password")))
+                        .build().connect();  // blocking connect to the broker
+            } catch (RuntimeException e) {
+                System.out.println("Exception!");
+                e.printStackTrace();
+                System.out.println("Exiting...");
+                System.exit(1);
+            }
         }
-
         return messagingService;
     }
 }
