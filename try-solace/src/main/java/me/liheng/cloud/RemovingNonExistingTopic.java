@@ -25,10 +25,12 @@ public class RemovingNonExistingTopic {
 
         directReceiver.addSubscription(TopicSubscription.of("topic/one"));
         directReceiver.addSubscription(TopicSubscription.of("topic/two"));
+        directReceiver.addSubscription(TopicSubscription.of("topic/two")); //This is fine too
+        directReceiver.addSubscription(TopicSubscription.of("topic/two")); //This is fine too
         directReceiver.receiveAsync(messageHandler);
         directPublisher.publish("Msg 1", Topic.of("topic/one"));
         directPublisher.publish("Msg 2", Topic.of("topic/two"));
-        directReceiver.removeSubscription(TopicSubscription.of("NOT/THERE"));  //This is fine
+        directReceiver.removeSubscription(TopicSubscription.of("NOT/THERE")); //This is fine
 
         Thread.sleep(1000);
         directPublisher.terminate(500);

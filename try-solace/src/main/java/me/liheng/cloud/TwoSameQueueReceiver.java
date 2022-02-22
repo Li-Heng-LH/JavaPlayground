@@ -33,6 +33,10 @@ public class TwoSameQueueReceiver {
                 .createPersistentMessageReceiverBuilder()
                 .withMessageAutoAcknowledgement()
                 .build(Queue.durableExclusiveQueue("queue2")).start();
+        final PersistentMessageReceiver receiver3 = CloudUtil.getMessagingService()
+                .createPersistentMessageReceiverBuilder()
+                .withMessageAutoAcknowledgement()
+                .build(Queue.durableExclusiveQueue("queue2")).start();
         final MessageReceiver.MessageHandler messageHandler = (inboundMessage) ->
                 System.out.printf("< Received message on thread: %s from %s: %s %n",
                         Thread.currentThread().getId(),
@@ -40,6 +44,7 @@ public class TwoSameQueueReceiver {
                         inboundMessage.getPayloadAsString());
         receiver1.receiveAsync(messageHandler);
         receiver2.receiveAsync(messageHandler);
+        receiver3.receiveAsync(messageHandler);
         persistentPublisher.publish("Msg 1".getBytes(StandardCharsets.US_ASCII),
                 Topic.of("persistent/two"));
 
@@ -47,6 +52,7 @@ public class TwoSameQueueReceiver {
         persistentPublisher.terminate(500);
         receiver1.terminate(500);
         receiver2.terminate(500);
+        receiver3.terminate(500);
         CloudUtil.getMessagingService().disconnect();
 
         // Message is only consumed once!
