@@ -23,4 +23,12 @@ public class Util {
         properties.setProperty(SolaceProperties.ServiceProperties.VPN_NAME,  "default");
         return properties;
     }
+
+    public static Properties getSecondProperties() {
+        final Properties properties = new Properties();
+        properties.setProperty(SolaceProperties.TransportLayerProperties.HOST, "localhost:55554");
+        properties.setProperty(SolaceProperties.ServiceProperties.VPN_NAME,  "second");
+        return properties;
+    }
+
 }
