@@ -59,6 +59,7 @@ public class App {
 
 
         Thread.sleep(2000); //Needed
+        prod.close();
         cons.close();
         session.closeSession();
     }
