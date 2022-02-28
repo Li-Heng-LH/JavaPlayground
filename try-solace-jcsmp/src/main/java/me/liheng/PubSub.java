@@ -4,7 +4,7 @@ import com.solacesystems.jcsmp.*;
 
 import java.io.IOException;
 
-public class App {
+public class PubSub {
     public static void main( String[] args ) throws JCSMPException, InterruptedException, IOException {
         final JCSMPSession session = Util.getSession();
 
