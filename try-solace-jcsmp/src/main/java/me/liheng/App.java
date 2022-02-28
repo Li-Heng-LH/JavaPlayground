@@ -1,13 +1,58 @@
 package me.liheng;
 
-/**
- * Hello world!
- *
- */
-public class App 
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
+import com.solacesystems.jcsmp.*;
+
+import java.io.IOException;
+
+public class App {
+    public static void main( String[] args ) throws JCSMPException, InterruptedException, IOException {
+        final JCSMPSession session = Util.getSession();
+
+        final XMLMessageConsumer cons = session.getMessageConsumer(new XMLMessageListener(){
+            @Override
+            public void onReceive(BytesXMLMessage msg) {
+                if (msg instanceof TextMessage) {
+                    System.out.printf("TextMessage received: '%s'%n",
+                            ((TextMessage)msg).getText());
+                } else {
+                    System.out.println("Message received.");
+                }
+                System.out.printf("Message Dump:%n%s%n",msg.dump());
+            }
+
+            @Override
+            public void onException(JCSMPException e) {
+                System.out.printf("Consumer received exception: %s%n",e);
+            }
+        });
+
+        final Topic topic = JCSMPFactory.onlyInstance().createTopic("tutorial/topic");
+        session.addSubscription(topic);
+        cons.start();
+
+        XMLMessageProducer prod = session.getMessageProducer(new JCSMPStreamingPublishEventHandler() {
+            @Override
+            public void responseReceived(String messageID) {
+                System.out.println("Producer received response for msg: " + messageID);
+            }
+
+            @Override
+            public void handleError(String messageID, JCSMPException e, long timestamp) {
+                System.out.printf("Producer received error for msg: %s@%s - %s%n",
+                        messageID,timestamp,e);
+            }
+        });
+
+        TextMessage msg = JCSMPFactory.onlyInstance().createMessage(TextMessage.class);
+        final String text = "Hello world!";
+        msg.setText(text);
+        prod.send(msg,topic);
+
+        msg.setText("Msg 2");
+        prod.send(msg,topic);
+
+        Thread.sleep(2000); //Needed
+        cons.close();
+        session.closeSession();
     }
 }
