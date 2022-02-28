@@ -26,8 +26,11 @@ public class App {
             }
         });
 
-        final Topic topic = JCSMPFactory.onlyInstance().createTopic("tutorial/topic");
-        session.addSubscription(topic);
+        final Topic topic1 = JCSMPFactory.onlyInstance().createTopic("tutorial/topic1");
+        final Topic topic2 = JCSMPFactory.onlyInstance().createTopic("tutorial/topic2");
+        final Topic topic3 = JCSMPFactory.onlyInstance().createTopic("tutorial/topic3");
+        session.addSubscription(topic1);
+        session.addSubscription(topic2);
         cons.start();
 
         XMLMessageProducer prod = session.getMessageProducer(new JCSMPStreamingPublishEventHandler() {
@@ -46,10 +49,14 @@ public class App {
         TextMessage msg = JCSMPFactory.onlyInstance().createMessage(TextMessage.class);
         final String text = "Hello world!";
         msg.setText(text);
-        prod.send(msg,topic);
+        prod.send(msg,topic1);
 
         msg.setText("Msg 2");
-        prod.send(msg,topic);
+        prod.send(msg,topic2);
+
+        msg.setText("Msg 3");
+        prod.send(msg,topic3);
+
 
         Thread.sleep(2000); //Needed
         cons.close();
