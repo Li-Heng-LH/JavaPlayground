@@ -12,7 +12,6 @@ public class Wildcard {
 
     public static void main(String[] args) throws IOException, InterruptedException  {
 
-
         final DirectMessagePublisher directPublisher = CloudUtil.getMessagingService()
                 .createDirectMessagePublisherBuilder().onBackPressureWait(1).build().start();
         final DirectMessageReceiver directReceiver = CloudUtil.getMessagingService().
