@@ -1,4 +1,4 @@
-package me.liheng;
+package me.liheng.local;
 
 import com.solace.messaging.MessagingService;
 import com.solace.messaging.config.AuthenticationStrategy;
@@ -8,9 +8,13 @@ import com.solace.messaging.publisher.OutboundMessage;
 import com.solace.messaging.publisher.OutboundMessageBuilder;
 import com.solace.messaging.resources.Topic;
 
-public class IterativeDirectPublisher {
+import java.util.Scanner;
 
-    public static void main(String[] args) throws InterruptedException {
+public class ManualDirectPublisher {
+
+    public static void main(String[] args) {
+
+        System.out.println( "Manual Direct Publisher!" );
 
         final MessagingService messagingService = MessagingService.builder(ConfigurationProfile.V1)
                 .fromProperties(Util.getProperties())
@@ -22,12 +26,14 @@ public class IterativeDirectPublisher {
 
         OutboundMessageBuilder messageBuilder = messagingService.messageBuilder();
 
-        for (int i = 0; i < 10000; i++) {
-            String payload = "Message " + i;
-            OutboundMessage message = messageBuilder.build(payload);
-            System.out.println("Sending payload: " + payload + " to topic: " + Util.topicStrings[i%5]);
-            publisher.publish(message, Topic.of(Util.topicStrings[i%5]));
-            Thread.sleep(2000);
+        String topicString = "topic/one";
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Type messages to be sent: ");
+        while (sc.hasNext()) {
+            OutboundMessage message = messageBuilder.build(sc.nextLine());
+            System.out.printf(">> Calling send() on %s%n", topicString);
+            publisher.publish(message, Topic.of(topicString));
         }
     }
 }

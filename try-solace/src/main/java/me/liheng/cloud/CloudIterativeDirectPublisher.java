@@ -4,7 +4,7 @@ import com.solace.messaging.publisher.DirectMessagePublisher;
 import com.solace.messaging.publisher.OutboundMessage;
 import com.solace.messaging.publisher.OutboundMessageBuilder;
 import com.solace.messaging.resources.Topic;
-import me.liheng.Util;
+import me.liheng.local.Util;
 
 import java.io.IOException;
 

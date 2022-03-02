@@ -3,7 +3,7 @@ package me.liheng.cloud;
 import com.solace.messaging.receiver.DirectMessageReceiver;
 import com.solace.messaging.receiver.MessageReceiver;
 import com.solace.messaging.resources.TopicSubscription;
-import me.liheng.Util;
+import me.liheng.local.Util;
 
 import java.io.IOException;
 import java.util.concurrent.Executors;

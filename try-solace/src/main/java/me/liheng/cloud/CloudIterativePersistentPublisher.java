@@ -2,7 +2,7 @@ package me.liheng.cloud;
 
 import com.solace.messaging.publisher.PersistentMessagePublisher;
 import com.solace.messaging.resources.Topic;
-import me.liheng.Util;
+import me.liheng.local.Util;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;

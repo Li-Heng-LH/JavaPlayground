@@ -1,4 +1,4 @@
-package me.liheng;
+package me.liheng.local;
 
 import com.solace.messaging.config.SolaceProperties;
 
