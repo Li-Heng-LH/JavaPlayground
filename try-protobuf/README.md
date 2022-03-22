@@ -12,6 +12,16 @@
 
 &nbsp;
 
+### Message ###
+Each field in the message definition has a unique number, which is used to identify the fields in the message binary format.  
+It should not be changed once your message type is in use. 
+
+&nbsp;
+
+### ###
+
+
+&nbsp;
 
 &nbsp;
 ----
