@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "me.liheng.protobuf";
+
+message Person {
+   int32 id = 1;
+   string name = 2;
+   repeated string email = 3;
+}
