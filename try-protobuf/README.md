@@ -18,4 +18,5 @@
 ### Useful links ###
 * [Compile protocol buffers using maven](https://blog.knoldus.com/compile-protocol-buffers-using-maven/)
 * [Maven Protocol Buffers Plugin](https://www.xolstice.org/protobuf-maven-plugin/index.html)
+* [Introduction to Google Protocol Buffer](https://www.baeldung.com/google-protocol-buffer)
 
