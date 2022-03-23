@@ -18,8 +18,9 @@ It should not be changed once your message type is in use.
 
 &nbsp;
 
-### ###
-
+### package ###
+proto packages generally do not make good Java packages since    
+proto packages are not expected to start with reverse domain names.
 
 &nbsp;
 

@@ -22,5 +22,9 @@ public class App {
         person1.writeDelimitedTo(new FileOutputStream("src/main/resources/test"));
         Person parsedPerson = Person.parseDelimitedFrom(new FileInputStream("src/main/resources/test"));
         System.out.println(parsedPerson);
+
+        System.out.println(Person.getDescriptor().getName());
+        System.out.println(Person.getDescriptor().getFullName());
+        System.out.println(Person.getDescriptor().getFields());
     }
 }
