@@ -22,7 +22,8 @@ public class Parallel {
                 .map(Parallel::processBatch)
                 .flatMap(Flux::fromIterable)
                 .sequential()
-                .subscribe();
+                .count()
+                .subscribe(count -> System.out.println(count == 1_000_000));
     }
 
     private static Set<Integer> processBatch(List<Integer> batch) {
