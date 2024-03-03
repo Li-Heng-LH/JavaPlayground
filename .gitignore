@@ -3,6 +3,7 @@
 ######################
 **/out/
 **/solace-cloud.properties
+**/mongo.properties
 
 ######################
 # Node
