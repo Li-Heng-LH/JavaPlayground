@@ -2,14 +2,13 @@ package org.example;
 
 import com.mongodb.ConnectionString;
 import com.mongodb.MongoClientSettings;
-import com.mongodb.MongoException;
 import com.mongodb.ServerApi;
 import com.mongodb.ServerApiVersion;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
-import com.mongodb.client.result.InsertOneResult;
+import com.mongodb.client.model.Indexes;
 import org.bson.Document;
 
 import java.io.FileInputStream;
@@ -48,10 +47,14 @@ public class MongoClientConnectionExample {
 
                 MongoDatabase newDatabase = mongoClient.getDatabase("testDatabase");
                 MongoCollection<Document> collection = newDatabase.getCollection("testCollection");
-                Document doc1 = new Document("color", "red").append("qty", 5);
-                InsertOneResult result = collection.insertOne(doc1);
-                System.out.println("Inserted a document with the following id: "
-                        + result.getInsertedId().asObjectId().getValue());
+
+                //Document doc1 = new Document("color", "red").append("qty", 5);
+                //InsertOneResult result = collection.insertOne(doc1);
+                //System.out.println("Inserted a document with the following id: " + result.getInsertedId().asObjectId().getValue());
+
+                String resultCreateIndex = collection.createIndex(Indexes.ascending("color"));
+                System.out.println(String.format("Index created: %s", resultCreateIndex));
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
